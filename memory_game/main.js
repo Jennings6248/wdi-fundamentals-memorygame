@@ -1,22 +1,31 @@
 let cards = ['queen','queen', 'king', 'king']
 let cardsInPlay = []
-let cardOne = cards[0]
-let cardTwo = cards[2]
 
-cardsInPlay.push(cards[0])
-cardsInPlay.push(cards[2])
+ /*if (cardsInPlay.length === 2) {
+    console.log('There are two cards in play')
+ }  else {
+     console.log('Not enough cards in play')
+ }
 
-console.log(`user flipped ${cards[0]}`)
-console.log(`user flipped ${cards[2]}`)
+*/
 
-if (cardsInPlay.length === 2) {
-   console.log('There are two cards in play')
-}  else {
-    console.log('Not enough cards in play')
+let checkForMatch = function() {
+  if (cardsInPlay[0] === cardsInPlay[1]) {
+    console.log("You found a match!");
+  } else {
+    console.log("Sorry, try again.");
+  }
 }
 
-if (cardsInPlay[0] === cardsInPlay[2]) {
-    alert('You found a match!')
- }  else {
-     alert('Sorry, try again')
- }
+let flipCard = function(cardId) {
+  let cardName = cards[cardId]
+  cardsInPlay.push(cardName)
+  console.log(`User flipped ${cardName}`)
+  checkForMatch()
+}
+
+flipCard(0)
+flipCard(2)
+
+
+  
